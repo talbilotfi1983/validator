@@ -1,0 +1,40 @@
+{
+  "results" : [ {
+    "filename" : null,
+    "code" : 1,
+    "title" : "Info notice",
+    "description" : "More information regarding the validation process",
+    "entityId" : "no id",
+    "level" : "INFO",
+    "noticeSpecificAll" : {
+      "feedPublisherNameOrAgencyName" : "Tisséo",
+      "errorNoticeCount" : 1,
+      "gtfsArchiveSizeBeforeUnzippingByte" : 6444328,
+      "processingTimeSecs" : 0,
+      "validationTimestamp" : "2021-06-27 11:32:37.3368985",
+      "gtfsValidatorVersion" : "TODO",
+      "warningNoticeCount" : 1,
+      "processedFilenameCollection" : "[stops.txt, trips.txt, frequencies.txt, agency.txt, calendar.txt, stop_times.txt, calendar_dates.txt, routes.txt, shapes.txt]",
+      "pathOrUrlToGtfsArchive" : "GTFS.zip",
+      "gtfsArchiveSizeAfterUnzippingByte" : 47169226
+    }
+  }, {
+    "filename" : "frequencies.txt",
+    "code" : 9,
+    "title" : "Empty optional csv file",
+    "description" : "`frequencies.txt` has headers but not data.",
+    "entityId" : "no id",
+    "level" : "WARNING",
+    "noticeSpecificAll" : { }
+  }, {
+    "filename" : "routes.txt",
+    "code" : 25,
+    "title" : "`route_color` and `route_text_color` have insufficient contrast",
+    "description" : "Contrast ratio should be >= 4.5 but was `2.6945165189022897` for route:`11821949023742784` in file:`routes.txt`. The `route_text_color` and `route_color` should be set to contrasting colors, as they are used as the text and background color (respectively) for displaying route names.  When left blank, `route_text_color` defaults to 000000 (black) and `route_color` defaults to FFFFFF (white).  A common source of issues here is setting `route_color` to a dark color, while leaving `route_text_color` set to black. In this case, `route_text_color` should be set to a lighter color like FFFFFF to ensure a legible contrast between the two. The contrast ratio formula used can be found here : https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-procedure",
+    "entityId" : "11821949023742784",
+    "level" : "ERROR",
+    "noticeSpecificAll" : {
+      "contrastRatio" : 2.6945165189022897
+    }
+  } ]
+}

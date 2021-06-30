@@ -1,0 +1,18 @@
+buildscript {
+    repositories { jcenter() }
+
+    dependencies {
+        classpath 'com.netflix.nebula:gradle-aggregate-javadocs-plugin:3.0.1'
+    }
+}
+
+apply plugin: 'nebula-aggregate-javadocs'
+
+// a task to run all tests and combine them in one report
+task testReport(type: TestReport) {
+    print("System.getenv(\"CI\"): " + System.getenv("CI"))
+    print(" - System.getenv(\"versionTag\"): " + System.getenv("versionTag"))
+    destinationDir = file("$buildDir/reports/allTests")
+    // Combine all 'test' task results into a single HTML report
+    reportOn subprojects.collect { it.tasks.withType(Test) }
+}
